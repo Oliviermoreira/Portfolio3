@@ -3,18 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Mon Portfolio</title>
   <style>
     /* Style CSS pour la mise en page */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f4f4f4;
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
     }
     .image-container {
       display: flex;
@@ -22,8 +31,15 @@
       justify-content: space-between;
     }
     .image-container img {
-      width: 200px;
+      width: calc(50% - 10px);
       margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 600px) {
+      .image-container img {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -40,4 +56,3 @@
   </div>
 </body>
 </html>
-
