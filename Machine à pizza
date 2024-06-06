@@ -1,0 +1,55 @@
+choix_pizza = [
+    "reine", "barbecue", "chevre", "kebab", "4fromage",
+    "savoyarde", "raclette", "chef", "truffes", "burger"
+]
+
+prix_pizza = {
+    "reine": 9,
+    "barbecue": 9,
+    "chevre": 9.5,
+    "kebab": 10,
+    "4fromages": 10.5,
+    "savoyarde": 11,
+    "raclette": 11,
+    "chef": 14,
+    "truffes": 13,
+    "burger": 12
+}
+
+print("Bonjour et bienvenue je vous laisse regarder ce qui vous ferais plaisir.")
+
+commande_prete = False
+prix_total = 0
+
+while not commande_prete:
+    print("Avez-vous fais votre choix?")
+    print()
+    numero = 0
+    for pizza in choix_pizza:
+        print(str(numero) + " " + pizza)
+        print()
+        numero += 1
+    numero_pizza = input("Quels pizza voulez-vous?")
+    numero_pizza = int(numero_pizza)
+
+    if numero_pizza <= len(choix_pizza):
+        pate_epaisse = input("Pate epaisse? (y/n)")
+        pizza_choisie = choix_pizza[numero_pizza]
+        prix_pizza_choisie = prix_pizza[pizza_choisie]
+        print(pizza_choisie)
+        print(prix_pizza_choisie)
+        print(pate_epaisse)
+        if pate_epaisse == 'y':
+            prix_total += prix_pizza_choisie+(prix_pizza_choisie*15/100)
+        else:
+            prix_total += prix_pizza_choisie
+        print(prix_total)
+
+    finis = input("Voulez vous une autre pizza (y/n)")
+    pizza_totale_choisie = [choix_pizza]
+
+
+    if finis == 'n':
+        print([pizza_totale_choisie])
+        print("Bon appetit")
+        commande_prete = True
